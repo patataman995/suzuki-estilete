@@ -1,50 +1,41 @@
-<html>
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suzuki</title>
+    <title>Mostrar Imagen al Clic</title>
     <style>
-        #imagenContainer {
+        .imagenContainer {
             display: none;
         }
     </style>
-</head>  
-  <body>
-  <title>Suzuki</title>
-  <h1>Suzuki Estilete</h1>
-<h1>
-    <button onclick="mostrarImagen()">Spawnear Suzuki Estilete</button>
+</head>
+<body>
+
+    <button onclick="mostrarImagen('Suzuki Estilete')">Mostrar Imagen 1</button>
+    <button onclick="mostrarImagen('Suzuki Estilete de navidad')">Mostrar Imagen 2</button>
     
-    <div id="imagencContainer">
-        <img src="suzukiestilete.png" alt="Imagen" width="300" height="200">
+    <div id="imagen1Container" class="imagenContainer">
+        <img src="suzukiestilete.png" alt="Imagen 1" width="300" height="200">
+    </div>
+
+    <div id="imagen2Container" class="imagenContainer">
+        <img src="Suzukiestiletec.png" alt="Imagen 2" width="300" height="200">
     </div>
 
     <script>
-        function mostrarImagen() {
-            var imagenContainer = document.getElementById("imagencContainer");
-            imagenContainer.style.display = "block";
-        }
-    </script>
-</h1>
-<h1>
-    <button onclick="mostrarImagen()">Spawnear Suzuki Estilete navidad</button>
-    
-    <div id="imagenContainer">
-        <img src="suzukiestiletec.png" alt="Imagen" width="300" height="200">
-    </div>
+        function mostrarImagen(id) {
+            var imagenContainers = document.querySelectorAll('.imagenContainer');
+            
+            // Oculta todas las imágenes
+            imagenContainers.forEach(function(container) {
+                container.style.display = 'none';
+            });
 
-    <script>
-        function mostrarImagen() {
-            var imagenContainer = document.getElementById("imagenContainer");
-            imagenContainer.style.display = "block";
+            // Muestra la imagen correspondiente al botón clicado
+            var imagenContainer = document.getElementById(id + 'Container');
+            imagenContainer.style.display = 'block';
         }
     </script>
-</h1>
-    
+
 </body>
-
-
-
-
-  
 </html>
