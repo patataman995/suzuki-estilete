@@ -1,7 +1,43 @@
 <html>
+  <title>Suzuki</title>
   <h1>Suzuki Estilete</h1>
   <h1>
 <img src="suzukiestilete.png">
   </h1>
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #imagenContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="mostrarImagen()">Suzuki buton</button>
+    
+    <div id="imagenContainer">
+        <img src="suzukiestilete.png" alt="Imagen" width="300" height="200">
+    </div>
+
+    <script>
+        function mostrarImagen() {
+            var imagenContainer = document.getElementById("imagenContainer");
+            imagenContainer.style.display = "block";
+        }
+    </script>
+
+</body>
+
+
+
+
   
 </html>
