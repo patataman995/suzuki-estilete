@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suzuki Estilete</title>
     <style>
+        body {
+            background-color: #fff; /* Color de fondo por defecto (modo claro) */
+            color: #000; /* Color de texto por defecto (modo claro) */
+        }
+
         .imagenContainer {
             display: none;
+        }
+
+        /* Estilos para el botón de modo claro/oscuro */
+        #modoBtn {
+            margin-top: 10px;
+            padding: 8px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-<h1>Suzuki Estilete Spawner</h1>
+    <h1>Suzuki Estilete Spawner</h1>
     <button onclick="mostrarImagen('imagen1')">Suzuki Estilete</button>
     <button onclick="mostrarImagen('imagen2')">Suzuki Estilete de Navidad</button>
     
@@ -21,6 +34,8 @@
     <div id="imagen2Container" class="imagenContainer">
         <img src="suzukiestiletec.png" alt="Imagen 2" width="300" height="200">
     </div>
+
+    <button id="modoBtn" onclick="toggleModo()">Cambiar Modo</button>
 
     <script>
         function mostrarImagen(id) {
@@ -34,6 +49,20 @@
             // Muestra la imagen correspondiente al botón clicado
             var imagenContainer = document.getElementById(id + 'Container');
             imagenContainer.style.display = 'block';
+        }
+
+        function toggleModo() {
+            var body = document.body;
+            body.classList.toggle('modo-oscuro');
+
+            // Cambia el color del texto y fondo según el modo actual
+            if (body.classList.contains('modo-oscuro')) {
+                body.style.backgroundColor = '#333'; // Fondo oscuro
+                body.style.color = '#fff'; // Texto claro
+            } else {
+                body.style.backgroundColor = '#fff'; // Fondo claro
+                body.style.color = '#000'; // Texto oscuro
+            }
         }
     </script>
 
